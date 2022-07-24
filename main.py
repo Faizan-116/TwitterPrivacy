@@ -1,6 +1,6 @@
 # main.py
 from fastapi import FastAPI,status
-
+from geotext import GeoText
 from pydantic import BaseModel
 # from fastapi import Response
 from typing import List
@@ -342,7 +342,7 @@ def sentiment(User: findhas):
     return sentiment_scores(User.InputText)
 
 
-# #api for find Location in the text
-# @app.post("/findlocation", status_code=status.HTTP_201_CREATED)
-# def locationAPI(User: findhas):
-#     return findLocation(User.InputText)
+#api for find Location in the text
+@app.post("/findlocation", status_code=status.HTTP_201_CREATED)
+def locationAPI(User: findhas):
+    return findLocation(User.InputText)
